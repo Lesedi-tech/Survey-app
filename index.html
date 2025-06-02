@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showScreen('form')">FILL OUT SURVEY</a>
+    <a href="#" onclick="showScreen('results')">VIEW SURVEY RESULTS</a>
+    <a href="#" onclick="resetSurveyData()">Reset Survey</a>
+  </nav>
+
+  <main>
+    <section id="form-section">
+      <h2>_Surveys</h2>
+      <form id="survey-form">
+        <fieldset>
+          <legend>Personal Details:</legend>
+          <label>Full Names:
+            <input type="text" id="name" required title="Please enter your full name." />
+          </label>
+          <label>Email:
+            <input type="email" id="email" required title="Please enter a valid email address." />
+          </label>
+          <label>Date of Birth:
+            <input type="date" id="dob" required title="You must be between 5 and 120 years old." />
+          </label>
+          <label>Contact Number:
+            <input type="tel" id="phone" required title="Please enter your phone number." />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>What is your favorite food?</legend>
+          <label><input type="checkbox" name="food" value="Pizza" /> Pizza</label>
+          <label><input type="checkbox" name="food" value="Pasta" /> Pasta</label>
+          <label><input type="checkbox" name="food" value="Pap and Wors" /> Pap and Wors</label>
+          <label><input type="checkbox" name="food" value="Other" /> Other</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Please rate your level of agreement from 1 to 5:</legend>
+          <table>
+            <tr>
+              <th></th>
+              <th>Strongly Agree</th>
+              <th>Agree</th>
+              <th>Neutral</th>
+              <th>Disagree</th>
+              <th>Strongly Disagree</th>
+            </tr>
+            <tr>
+              <td>I like to watch movies</td>
+              <td><input type="radio" name="movies" value="1" required /></td>
+              <td><input type="radio" name="movies" value="2" /></td>
+              <td><input type="radio" name="movies" value="3" /></td>
+              <td><input type="radio" name="movies" value="4" /></td>
+              <td><input type="radio" name="movies" value="5" /></td>
+            </tr>
+            <tr>
+              <td>I like to listen to radio</td>
+              <td><input type="radio" name="radio" value="1" required /></td>
+              <td><input type="radio" name="radio" value="2" /></td>
+              <td><input type="radio" name="radio" value="3" /></td>
+              <td><input type="radio" name="radio" value="4" /></td>
+              <td><input type="radio" name="radio" value="5" /></td>
+            </tr>
+            <tr>
+              <td>I like to eat out</td>
+              <td><input type="radio" name="eatOut" value="1" required /></td>
+              <td><input type="radio" name="eatOut" value="2" /></td>
+              <td><input type="radio" name="eatOut" value="3" /></td>
+              <td><input type="radio" name="eatOut" value="4" /></td>
+              <td><input type="radio" name="eatOut" value="5" /></td>
+            </tr>
+            <tr>
+              <td>I like to watch TV</td>
+              <td><input type="radio" name="tv" value="1" required /></td>
+              <td><input type="radio" name="tv" value="2" /></td>
+              <td><input type="radio" name="tv" value="3" /></td>
+              <td><input type="radio" name="tv" value="4" /></td>
+              <td><input type="radio" name="tv" value="5" /></td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <button type="submit">SUBMIT</button>
+      </form>
+    </section>
+
+    <section id="results-section" style="display: none">
+      <h2>Survey Results</h2>
+      <table class="results-table">
+        <tbody id="results"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
